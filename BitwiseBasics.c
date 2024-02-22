@@ -14,14 +14,13 @@ void main(int argc, char *argv[])
     {
         printf("Usage error \n ./exe s/t/g");
     }
-
     printBinary(value);
 
     if((*argv[1] == 's') || (*argv[1] == 'S'))
     {
         printf("Enter the bit number to be set\n");
-        scanf("%d", &position);
-        value |= (1 << position);
+        scanf("%hhd", &position);
+        value = value | (1 << position);
         printf("After bit is set\n");
         printBinary(value);
     }   
@@ -35,4 +34,5 @@ void printBinary(datatype  value)
         printf("%d ", ((value >> iterate) & 1));
     }
     printf("\n");
+    printf("Inside for Valus is : %d\n", value);
 }
